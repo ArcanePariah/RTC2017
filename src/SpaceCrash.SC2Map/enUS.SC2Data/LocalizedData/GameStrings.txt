@@ -1,0 +1,6 @@
+﻿DocInfo/DescLong=Take control of the enemy deployment zones
+DocInfo/DescShort=2
+DocInfo/Name=Space Shipping
+MapInfo/Player00/Name=Neutral
+MapInfo/Player01/Name=Player 1
+MapInfo/Player02/Name=Hostile
