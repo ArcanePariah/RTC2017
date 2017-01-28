@@ -89,6 +89,8 @@ bool gt_Init01LoadData_Func (bool testConds, bool runActions) {
         }
     }
     libCOOC_gf_EnableArcadeContestMode();
+    TriggerExecute(gt_Init02Players, true, false);
+    libCOMI_gf_LoadCoopMission("SuddenAssault", gt_Init03LoadingComplete);
     return true;
 }
 

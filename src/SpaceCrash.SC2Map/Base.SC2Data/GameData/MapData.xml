@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <Catalog>
-    <CMap id="SuddenAssault"/>
+    <CMap id="SuddenAssault">
+        <UserReference value="Maps;[Default]"/>
+    </CMap>
 </Catalog>

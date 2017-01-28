@@ -85,6 +85,8 @@
         <Event Type="FunctionCall" Id="1A5CC6A4"/>
         <Action Type="FunctionCall" Id="1471121F"/>
         <Action Type="FunctionCall" Id="1C27D770"/>
+        <Action Type="FunctionCall" Id="09EAEDDE"/>
+        <Action Type="FunctionCall" Id="CD668086"/>
     </Element>
     <Element Type="Variable" Id="353F7201">
         <VariableType>
@@ -291,6 +293,41 @@
     </Element>
     <Element Type="FunctionCall" Id="1C27D770">
         <FunctionDef Type="FunctionDef" Library="COOC" Id="41F5D4FE"/>
+    </Element>
+    <Element Type="FunctionCall" Id="09EAEDDE">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000116"/>
+        <Parameter Type="Param" Id="38C6A4EA"/>
+        <Parameter Type="Param" Id="22A4EBE9"/>
+        <Parameter Type="Param" Id="B0C3ACFC"/>
+    </Element>
+    <Element Type="Param" Id="38C6A4EA">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000183"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="00000065"/>
+    </Element>
+    <Element Type="Param" Id="22A4EBE9">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000184"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="00000068"/>
+    </Element>
+    <Element Type="Param" Id="B0C3ACFC">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000182"/>
+        <ValueType Type="trigger"/>
+        <ValueElement Type="Trigger" Id="A16C163C"/>
+    </Element>
+    <Element Type="FunctionCall" Id="CD668086">
+        <FunctionDef Type="FunctionDef" Library="COMI" Id="E7FBAF78"/>
+        <Parameter Type="Param" Id="E560AD81"/>
+        <Parameter Type="Param" Id="F93B3882"/>
+    </Element>
+    <Element Type="Param" Id="E560AD81">
+        <ParameterDef Type="ParamDef" Library="COMI" Id="C491CCD6"/>
+        <Value>SuddenAssault</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Map"/>
+    </Element>
+    <Element Type="Param" Id="F93B3882">
+        <ParameterDef Type="ParamDef" Library="COMI" Id="624E093B"/>
+        <ValueType Type="trigger"/>
+        <ValueElement Type="Trigger" Id="35C8AC1F"/>
     </Element>
     <Element Type="Trigger" Id="A16C163C">
         <Action Type="FunctionCall" Id="7E691000"/>

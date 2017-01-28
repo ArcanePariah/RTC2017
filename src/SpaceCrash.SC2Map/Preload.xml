@@ -4,5 +4,6 @@
 <Commander id="Raynor"/>
 <Commander id="Kerrigan"/>
 <Commander id="Artanis"/>
+<Map id="SuddenAssault"/>
 <Terrain id="ShadowCorpsPlatform"/>
 </Preload>
