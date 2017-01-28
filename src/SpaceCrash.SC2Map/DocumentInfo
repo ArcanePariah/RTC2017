@@ -5,5 +5,6 @@
     </ModType>
     <Dependencies>
         <Value>bnet:Void (Campaign)/0.0/999,file:Campaigns/Void.SC2Campaign</Value>
+        <Value>bnet:Allied Commanders/0.0/323238,file:Mods\alliedcommanders.sc2mod</Value>
     </Dependencies>
 </DocInfo>

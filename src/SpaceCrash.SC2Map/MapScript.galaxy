@@ -5,10 +5,212 @@
 // Name:   Space Shipping
 // 
 //==================================================================================================
-include "TriggerLibs/natives"
+include "TriggerLibs/NativeLib"
+include "LibCOOC"
+include "LibCOMI"
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+void InitLibs () {
+    libNtve_InitLib();
+    libCOOC_InitLib();
+    libCOMI_InitLib();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Constants
+//--------------------------------------------------------------------------------------------------
+const int gv_pLAYER_01_USER = 1;
+const int gv_pLAYER_02_USER = 2;
+const int gv_pLAYER_03_ENEMY = 3;
+const int gv_pLAYER_04_ENEMY = 4;
+
+//--------------------------------------------------------------------------------------------------
+// Global Variables
+//--------------------------------------------------------------------------------------------------
+playergroup gv_enemyPlayers;
+
+void InitGlobals () {
+    gv_enemyPlayers = PlayerGroupEmpty();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger Variables
+//--------------------------------------------------------------------------------------------------
+trigger gt_Init01LoadData;
+trigger gt_Init02Players;
+trigger gt_Init03LoadingComplete;
+trigger gt_Init04Technology;
+trigger gt_Init05Units;
+trigger gt_Init06MusicSound;
+trigger gt_Init07Environment;
+trigger gt_Init08Difficulties;
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Init 01 Load Data
+//--------------------------------------------------------------------------------------------------
+bool gt_Init01LoadData_Func (bool testConds, bool runActions) {
+    playergroup auto1471121F_g;
+    int auto1471121F_p;
+    string auto5DD28C3F_val;
+
+    // Variable Declarations
+    int lv_indexPlayer;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto1471121F_g = libCOOC_gf_HumanPlayers(); 
+    auto1471121F_p = 1;
+    for ( ; auto1471121F_p <= PlayerGroupCount(auto1471121F_g) ; auto1471121F_p += BoolToInt(lv_indexPlayer == PlayerGroupPlayer(auto1471121F_g, auto1471121F_p)) ) {
+        lv_indexPlayer = PlayerGroupPlayer(auto1471121F_g, auto1471121F_p);
+        auto5DD28C3F_val = GameAttributePlayerValue("1", lv_indexPlayer);
+        if (auto5DD28C3F_val == "0001") {
+            PlayerSetCommander(lv_indexPlayer, "Raynor");
+        }
+        else if (auto5DD28C3F_val == "0003") {
+            PlayerSetCommander(lv_indexPlayer, "Kerrigan");
+        }
+        else if (auto5DD28C3F_val == "0002") {
+            PlayerSetCommander(lv_indexPlayer, "Artanis");
+        }
+        else {
+            if ((lv_indexPlayer == 1)) {
+                PlayerSetCommander(lv_indexPlayer, "Raynor");
+            }
+            else {
+                PlayerSetCommander(lv_indexPlayer, "Artanis");
+            }
+        }
+    }
+    libCOOC_gf_EnableArcadeContestMode();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Init01LoadData_Init () {
+    gt_Init01LoadData = TriggerCreate("gt_Init01LoadData_Func");
+    TriggerAddEventMapInit(gt_Init01LoadData);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Init 02 Players
+//--------------------------------------------------------------------------------------------------
+bool gt_Init02Players_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_SetPlayerGroupAlliance(libCOOC_gf_HumanPlayers(), libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable);
+    PlayerGroupAdd(gv_enemyPlayers, gv_pLAYER_03_ENEMY);
+    PlayerGroupAdd(gv_enemyPlayers, gv_pLAYER_04_ENEMY);
+    libNtve_gf_SetPlayerGroupAlliance(gv_enemyPlayers, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable);
+    libCOMI_gf_SetAlliedCommandersstartingResources();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Init02Players_Init () {
+    gt_Init02Players = TriggerCreate("gt_Init02Players_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Init 03 Loading Complete
+//--------------------------------------------------------------------------------------------------
+bool gt_Init03LoadingComplete_Func (bool testConds, bool runActions) {
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Init03LoadingComplete_Init () {
+    gt_Init03LoadingComplete = TriggerCreate("gt_Init03LoadingComplete_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Init 04 Technology
+//--------------------------------------------------------------------------------------------------
+bool gt_Init04Technology_Func (bool testConds, bool runActions) {
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Init04Technology_Init () {
+    gt_Init04Technology = TriggerCreate("gt_Init04Technology_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Init 05 Units
+//--------------------------------------------------------------------------------------------------
+bool gt_Init05Units_Func (bool testConds, bool runActions) {
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Init05Units_Init () {
+    gt_Init05Units = TriggerCreate("gt_Init05Units_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Init 06 Music/Sound
+//--------------------------------------------------------------------------------------------------
+bool gt_Init06MusicSound_Func (bool testConds, bool runActions) {
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Init06MusicSound_Init () {
+    gt_Init06MusicSound = TriggerCreate("gt_Init06MusicSound_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Init 07 Environment
+//--------------------------------------------------------------------------------------------------
+bool gt_Init07Environment_Func (bool testConds, bool runActions) {
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Init07Environment_Init () {
+    gt_Init07Environment = TriggerCreate("gt_Init07Environment_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Init 08 Difficulties
+//--------------------------------------------------------------------------------------------------
+bool gt_Init08Difficulties_Func (bool testConds, bool runActions) {
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Init08Difficulties_Init () {
+    gt_Init08Difficulties = TriggerCreate("gt_Init08Difficulties_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger Initialization
+//--------------------------------------------------------------------------------------------------
+void InitTriggers () {
+    gt_Init01LoadData_Init();
+    gt_Init02Players_Init();
+    gt_Init03LoadingComplete_Init();
+    gt_Init04Technology_Init();
+    gt_Init05Units_Init();
+    gt_Init06MusicSound_Init();
+    gt_Init07Environment_Init();
+    gt_Init08Difficulties_Init();
+}
 
 //--------------------------------------------------------------------------------------------------
 // Map Initialization
 //--------------------------------------------------------------------------------------------------
 void InitMap () {
+    InitLibs();
+    InitGlobals();
+    InitTriggers();
 }

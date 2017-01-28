@@ -1,0 +1,17 @@
+﻿Category/Name/08A4CB69=Initialization
+Category/Name/5BABB867======== Main ========
+Category/Name/F3CFABD3=Global Varibles
+Trigger/Name/09B4B404=Init 04 Technology
+Trigger/Name/35C8AC1F=Init 03 Loading Complete
+Trigger/Name/5E6D76D6=Init 06 Music/Sound
+Trigger/Name/75423A73=Init 05 Units
+Trigger/Name/A16C163C=Init 02 Players
+Trigger/Name/A545A997=Init 01 Load Data
+Trigger/Name/CA6A6754=Init 08 Difficulties
+Trigger/Name/F816AFAA=Init 07 Environment
+Variable/Name/353F7201=Index Player
+Variable/Name/40E64074=PLAYER_03_ENEMY
+Variable/Name/4D61DDA8=Enemy Players
+Variable/Name/85E7E30F=PLAYER_02_USER
+Variable/Name/B71DF4D3=PLAYER_04_ENEMY
+Variable/Name/B87D28E7=PLAYER_01_USER

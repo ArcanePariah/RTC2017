@@ -1,6 +1,20 @@
-﻿DocInfo/DescLong=Take control of the enemy deployment zones
+﻿Attribute001/Name=Chosen Commander
+Attribute001/Value001/Name=Raynor
+
+Attribute001/Value002/Name=Artanis
+
+Attribute001/Value003/Name=Kerrigan
+Attribute001/Value004/Name=None
+
+DocInfo/DescLong=Take control of the enemy deployment zones
 DocInfo/DescShort=2
 DocInfo/Name=Space Shipping
+Map/Name/SuddenAssault=Sudden Assault
 MapInfo/Player00/Name=Neutral
 MapInfo/Player01/Name=Player 1
-MapInfo/Player02/Name=Hostile
+MapInfo/Player02/Name=Player 2
+MapInfo/Player03/Name=Amon's Forces
+MapInfo/Player04/Name=Amon's Forces
+MapInfo/Player05/Name=Hostile
+Variant001/ModeDesc=All settings may be customized.
+Variant001/ModeName=Custom
